@@ -3,4 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="GAIN">gain</string>
+    <string name="PAIN">pain</string>
+    <string name="HINT">I will gain from...</string>
+
 </resources>

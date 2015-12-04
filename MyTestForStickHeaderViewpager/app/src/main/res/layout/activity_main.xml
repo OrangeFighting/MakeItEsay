@@ -1,71 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-    
-<com.stickheaderlayout.StickHeaderLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/shl_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ListViewSimpleActivity">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_horizontal_margin">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#293"
-        android:gravity="center"
-        android:text="header" />
 
     <LinearLayout
+        android:id="@+id/llbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="asdfadsf"
+            />
+    </LinearLayout>
+    <com.stickheaderlayout.StickHeaderLayout
+        android:id="@+id/shl_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/llbtn"
+        tools:context=".ListViewSimpleActivity">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#874"
+            android:layout_height="200dp"
+            android:background="#293"
             android:gravity="center"
-            android:text="viewpager simple activity" />
+            android:text="header" />
 
         <LinearLayout
-            android:id="@+id/ly_tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_tab1"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="50dp"
+                android:background="#874"
                 android:gravity="center"
-                android:text="Recycler"
-                android:background="#124020"
-                android:textColor="@android:color/black"
-                android:layout_weight="1"/>
+                android:text="viewpager simple activity" />
 
-            <TextView
-                android:id="@+id/tv_tab2"
+            <LinearLayout
+                android:id="@+id/ly_tab"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="Recycler2"
-                android:background="#124020"
-                android:textColor="@android:color/black"
-                android:layout_weight="1"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/tv_tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="@string/GAIN"
+                    android:background="#124020"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tv_tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="@string/PAIN"
+                    android:background="#124020"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/cursor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"
+                android:src="@drawable/cursor"
+                />
         </LinearLayout>
-        <ImageView
-            android:id="@+id/cursor"
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/v_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="matrix"
-            android:src="@drawable/cursor"
-            />
-    </LinearLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/v_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            android:layout_height="match_parent" />
 
 
-</com.stickheaderlayout.StickHeaderLayout>
+    </com.stickheaderlayout.StickHeaderLayout>
+
+
+</RelativeLayout>

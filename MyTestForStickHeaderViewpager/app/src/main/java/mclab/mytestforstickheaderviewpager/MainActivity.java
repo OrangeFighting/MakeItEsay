@@ -1,7 +1,6 @@
 package mclab.mytestforstickheaderviewpager;
 
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
@@ -49,15 +48,16 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager = (ViewPager)findViewById(R.id.v_scroll);
         StickHeaderLayout shl_root = (StickHeaderLayout)findViewById(R.id.shl_root);
-        mViewPager.setOffscreenPageLimit(4);
+        mViewPager.setOffscreenPageLimit(1);//Set the number of pages that should be retained to either side of current page
         manager = new StickHeaderViewPagerManager(shl_root,mViewPager);
         viewList = new ArrayList<ViewPagerBean>();
+        //add gain view
+        SimpleRecyclerView gainRecyclerView = new SimpleRecyclerView(this);
+        viewList.add(new ViewPagerBean(gainRecyclerView, gainRecyclerView.getPlaceHoderHeaderLayout()));
+        //add pain view
+        SimpleRecyclerView painRecyclerView = new SimpleRecyclerView(this);
+        viewList.add(new ViewPagerBean(painRecyclerView, painRecyclerView.getPlaceHoderHeaderLayout()));
 
-        SimpleRecyclerView simpleRecyclerView = new SimpleRecyclerView(this);
-        viewList.add(new ViewPagerBean(simpleRecyclerView, simpleRecyclerView.getPlaceHoderHeaderLayout()));
-
-        SimpleRecyclerView simpleRecyclerView2 = new SimpleRecyclerView(this);
-        viewList.add(new ViewPagerBean(simpleRecyclerView2, simpleRecyclerView2.getPlaceHoderHeaderLayout()));
         mViewPager.setAdapter(pagerAdapter);
 
         initTabBar();
@@ -98,12 +98,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                for(TextView textView : tvList){
-                    textView.setBackgroundColor(Color.parseColor("#521242"));
-                    textView.setTextColor(Color.parseColor("#FFFFFF"));
-                }
-                tvList.get(position).setBackgroundColor(Color.parseColor("#124020"));
-                tvList.get(position).setTextColor(Color.parseColor("#000000"));
+//                for(TextView textView : tvList){
+//                    textView.setBackgroundColor(Color.parseColor("#521242"));
+//                    textView.setTextColor(Color.parseColor("#FFFFFF"));
+//                }
+//                tvList.get(position).setBackgroundColor(Color.parseColor("#124020"));
+//                tvList.get(position).setTextColor(Color.parseColor("#000000"));
 
                 int one = offset * 2 + bmpW;// 页卡1 -> 页卡2 偏移量
                 Animation animation = new TranslateAnimation(one*currentIndex, one*position, 0, 0);
