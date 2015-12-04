@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -78,7 +77,7 @@ public class SimpleRecyclerView extends FrameLayout{
         public void onbindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
             RecyclerItemViewHolder holder = (RecyclerItemViewHolder) viewHolder;
             holder.tvTitle.setText(mItemList.get(position));
-            holder.etTitle.setHint("testestest");
+            //holder.etTitle.setHint("testestest");
         }
 
         @Override
@@ -89,14 +88,14 @@ public class SimpleRecyclerView extends FrameLayout{
         private  class RecyclerItemViewHolder extends RecyclerView.ViewHolder {
 
             private final TextView tvTitle;
-            private EditText etTitle;
+            //private EditText etTitle;
             private final ImageView ivIcon;
 
             public RecyclerItemViewHolder(View itemView) {
                 super(itemView);
                 tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
                 ivIcon = (ImageView) itemView.findViewById(R.id.iv_icon);
-                etTitle = (EditText) itemView.findViewById(R.id.et_title);
+                //etTitle = (EditText) itemView.findViewById(R.id.et_title);
             }
         }
     }
