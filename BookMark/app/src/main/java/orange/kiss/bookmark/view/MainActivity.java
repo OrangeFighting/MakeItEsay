@@ -1,9 +1,11 @@
-package orange.kiss.bookmark;
+package orange.kiss.bookmark.view;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import orange.kiss.bookmark.R;
 
 
 public class MainActivity extends ActionBarActivity {
